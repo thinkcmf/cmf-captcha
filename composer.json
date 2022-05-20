@@ -1,6 +1,6 @@
 {
-    "name": "topthink/think-captcha",
-    "description": "captcha package for thinkphp",
+    "name": "thinkcmf/cmf-captcha",
+    "description": "captcha package for ThinkCMF",
     "authors": [
         {
             "name": "yunwuxin",
@@ -14,19 +14,6 @@
     "autoload": {
         "psr-4": {
             "think\\captcha\\": "src/"
-        },
-        "files": [
-            "src/helper.php"
-        ]
-    },
-    "extra": {
-        "think": {
-            "services": [
-                "think\\captcha\\CaptchaService"
-            ],
-            "config":{
-                "captcha": "src/config.php"
-            }            
         }
     }
 }
