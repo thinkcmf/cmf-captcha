@@ -221,7 +221,7 @@ class Captcha
         foreach ($text as $index => $char) {
 
             $x     = $this->fontSize * ($index + 1) * ($this->math ? 1 : 1.5);
-            $y     = $this->fontSize + mt_rand(10, 20);
+            $y     = $this->fontSize + mt_rand(5, 15);
             $angle = $this->math ? 0 : mt_rand(-40, 40);
 
             imagettftext($this->im, $this->fontSize, $angle, (int) $x, (int) $y, $this->color, $fontttf, $char);
@@ -267,7 +267,7 @@ class Captcha
                 $py = $A * sin($w * $px + $f) + $b + $this->imageH / 2; // y = Asin(ωx+φ) + b
                 $i  = (int) ($this->fontSize / 5);
                 while ($i > 0) {
-                    imagesetpixel($this->im, $px + $i, $py + $i, $this->color); // 这里(while)循环画像素点比imagettftext和imagestring用字体大小一次画出（不用这while循环）性能要好很多
+                    imagesetpixel($this->im, (int)($px + $i), (int)($py + $i), $this->color); // 这里(while)循环画像素点比imagettftext和imagestring用字体大小一次画出（不用这while循环）性能要好很多
                     $i--;
                 }
             }
@@ -287,7 +287,7 @@ class Captcha
                 $py = $A * sin($w * $px + $f) + $b + $this->imageH / 2; // y = Asin(ωx+φ) + b
                 $i  = (int) ($this->fontSize / 5);
                 while ($i > 0) {
-                    imagesetpixel($this->im, $px + $i, $py + $i, $this->color);
+                    imagesetpixel($this->im, (int)($px + $i), (int)($py + $i), $this->color);
                     $i--;
                 }
             }
